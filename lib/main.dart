@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'pages/FrontPage.dart';
+
 void main() => runApp(StacksApp());
 
 class StacksApp extends StatelessWidget {
@@ -9,18 +11,10 @@ class StacksApp extends StatelessWidget {
       title: 'STACKS',
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.blue,
-        accentColor: Colors.blueAccent,
+        primarySwatch: Colors.deepPurple,
+        accentColor: Colors.deepPurpleAccent,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('STACKS'),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Text('This is the Stacks App!'),
-        ),
-      ),
+      home: FrontPage(),
     );
   }
 }
