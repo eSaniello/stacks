@@ -10,10 +10,10 @@ class StacksApp extends StatelessWidget {
     return MaterialApp(
       title: 'STACKS',
       theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.deepPurple,
-        accentColor: Colors.deepPurpleAccent,
-      ),
+          brightness: Brightness.light,
+          primarySwatch: Colors.deepPurple,
+          accentColor: Colors.deepPurpleAccent,
+          fontFamily: 'Philosopher'),
       home: FrontPage(),
     );
   }

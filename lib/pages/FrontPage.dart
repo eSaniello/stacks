@@ -5,10 +5,10 @@ class FrontPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        color: Colors.white,
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          // mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
               padding: EdgeInsets.fromLTRB(0, 45, 0, 0),
@@ -21,46 +21,90 @@ class FrontPage extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
               child: Text(
                 'STACKS',
-                style: TextStyle(fontSize: 48),
+                style: TextStyle(
+                  fontSize: 48,
+                  fontFamily: 'AllertaStencil',
+                ),
               ),
             ),
             Container(
+              padding: EdgeInsets.fromLTRB(0, 5, 0, 20),
               child: Text(
                 'Freelance services op aanvraag',
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(
+                  fontSize: 20,
+                ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-              width: double.infinity,
-              color: Colors.blue,
+            Expanded(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Card(
-                    elevation: 3,
-                    child: Column(
-                      children: <Widget>[
-                        Image.asset(
-                          'assets/zoek_dienst.jpg',
-                          fit: BoxFit.contain,
-                          height: 50,
+                  Expanded(
+                    child: Card(
+                      color: Colors.deepPurpleAccent,
+                      margin: EdgeInsets.all(10),
+                      elevation: 3,
+                      child: InkWell(
+                        splashColor: Colors.white.withAlpha(60),
+                        onTap: () {
+                          print('Zoek een dienst tapped');
+                        },
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              'assets/zoek_dienst.png',
+                              fit: BoxFit.contain,
+                              height: 100,
+                              alignment: Alignment.center,
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                              child: Text(
+                                "Zoek een dienst",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        Text("Zoek een dienst"),
-                      ],
+                      ),
                     ),
                   ),
-                  Card(
-                    elevation: 3,
-                    child: Column(
-                      children: <Widget>[
-                        Image.asset(
-                          'assets/verleen_dienst.png',
-                          fit: BoxFit.contain,
-                          height: 50,
+                  Expanded(
+                    child: Card(
+                      color: Colors.deepPurpleAccent,
+                      margin: EdgeInsets.all(10),
+                      elevation: 3,
+                      child: InkWell(
+                        splashColor: Colors.white.withAlpha(60),
+                        onTap: () {
+                          print('Verleen een dienst tapped');
+                        },
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              'assets/verleen_dienst.png',
+                              fit: BoxFit.contain,
+                              height: 100,
+                              alignment: Alignment.center,
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                              child: Text(
+                                "Verleen een dienst",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        Text("Verleen een dienst"),
-                      ],
+                      ),
                     ),
                   ),
                 ],
