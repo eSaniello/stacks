@@ -1,0 +1,47 @@
+tbl_gebruikers_type:
+    type_id |PK|
+    type(beheerder, klant, freelancer)
+    
+tbl_freelancer:
+    freelancer_id |PK|
+    naam
+    achternaam
+    email
+    mobiel
+    adres
+    woonplaats
+    type_id |FK|
+    
+ 
+tbl_klant:
+    klantid |PK|
+    gebruikersnaam
+    naam
+    achternaam
+    email
+    mobiel
+    adres
+    woonplaats
+    type_id |FK|
+
+tbl_posts:
+    postid |PK|
+    gebruikersid |FK|
+    titel
+    beschrijving
+    categorie_id |FK|
+    timestamp
+    post_status
+
+tbl_responses:
+    postid
+    gebruikersid | type  AUTHOR
+
+    timestamp
+
+tbl_categorie
+    categorie_id
+    cat
+
+1. wat moet de beheerder kunnen
+2. 

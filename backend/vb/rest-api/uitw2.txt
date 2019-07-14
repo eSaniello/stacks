@@ -1,0 +1,88 @@
+je gaat een freelancer tabel moeten hbbn zodat je info hebt zoals werk ervaring, opleiding
+klant is voor je post
+
+voor je post ga je drie tabellen hebben
+eerste is voor die post die er wordt geplaatst, daar ga je tijd, cat en prijs
+tweede is voor alle freelancer die hebben respond
+en derde is waar je info hebt waar de klant heeft gekozen welke freelancer hij heeft gekozen en wat het gaat kosten
+
+
+
+Administrator
+
+type
+    type_id |PK|
+    naam
+    omschrijving
+
+CREATE TABLE type_user (
+    type_id int NOT NULL,
+    naam varchar,
+    PRIMARY KEY (type_id)
+);
+
+freelancer
+    freelancer_id |PK|
+    type_id |FK|
+    naam
+    achternaam
+    email
+    mobiel
+    adres
+    woonplaats
+    opleiding
+    werk-ervaring
+
+
+CREATE TABLE freelancers (
+    freelancer_id int NOT NULL,
+    type_id int,
+    naam varchar,
+    achternaam varchar,
+    email varchar,
+    mobiel int,
+    adres varchar,
+    woonplaats varchar,
+    opleiding text,
+    werkervaring text,
+    PRIMARY KEY (freelancer_id),
+    FOREIGN KEY (type_id)
+    REFERENCES type_user(type_id)  
+);
+
+    
+tbl_klant:
+    klantid |PK|
+    gebruikersnaam
+    naam
+    achternaam
+    email
+    mobiel
+    adres
+    woonplaats
+    type_id |FK|
+
+tbl_categorie:
+    categorie_id
+    naam
+    omschrijving
+
+tbl_post
+    post_id
+    klantid
+    tijd
+    inhoud
+    cat
+    
+
+tbl_reacties
+    post_id
+    reactie
+    freelancer_id
+
+tbl_jobs
+    job_id
+    klantid
+    freelancer_id
+    categorie_id
+    prijs
