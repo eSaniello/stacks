@@ -35,6 +35,7 @@ if($num > 0){
 
         $freelancer_item = array(
             'freelancer_id' => $freelancer_id,
+            'type_id' => $type_id,
             'gebruikersnaam' => $gebruikersnaam,
             'naam' => $naam,
             'voornaam' => $voornaam,
