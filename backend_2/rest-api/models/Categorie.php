@@ -117,28 +117,67 @@ function update(){
  
     return false;
 }
+
+#DOES NOT WORK YET
 // Delete post
-    public function delete(){
-    // create query
-    $query = 
-    'DELETE FROM' . $this->table . 'WHERE id = :id'; 
-    // prepare statement
-        $stmt = $this->conn->prepare($query);
+    // public function delete(){
+    // // create query
+    // $query = 
+    // "DELETE FROM" . $this->table . "WHERE categorie_id = :categorie_id"; 
+    // // prepare statement
+    //     $stmt = $this->conn->prepare($query);
 
-        // clean data
-        $this->categorie_id = htmlspecialchars(strip_tags($this->categorie_id));
+    //     // clean data
+    //     $this->categorie_id = htmlspecialchars(strip_tags($this->categorie_id));
 
-        // bind data
-        $stmt->bindParam(':categorie_id', $this->categorie_id);
+    //     // bind data
+    //     $stmt->bindParam(':categorie_id', $this->categorie_id);
 
-        // Execute query
-        if($stmt->execute()){
-            return true;
-        }
-        // print error if something goes wrong
-        printf("Error: %s.\n", $stmt->error);
+    //     // Execute query
+    //     if($stmt->execute()){
+    //         return true;
+    //     }
+    //     // print error if something goes wrong
+    //     printf("Error: %s.\n", $stmt->error);
         
-        return false;
-    }
+    //     return false;
+    // }
+
+#DOES NOT WORK YET
+// search products 
+// function search($keywords){
+ 
+//     // select all query
+//     $query = "SELECT
+//                 c.naam as naam, p.categorie_id, p.naam, p.omschrijving, p.price, p.categorie_id, p.created
+//             FROM
+//                 " . $this->table_naam . " p
+//                 LEFT JOIN
+//                     categories c
+//                         ON p.categorie_id = c.id
+//             WHERE
+//                 p.naam LIKE ? OR p.omschrijving LIKE ? OR c.naam LIKE ?
+//             ORDER BY
+//                 p.created DESC";
+ 
+//     // prepare query statement
+//     $stmt = $this->conn->prepare($query);
+ 
+//     // sanitize
+//     $keywords=htmlspecialchars(strip_tags($keywords));
+//     $keywords = "%{$keywords}%";
+ 
+//     // bind
+//     $stmt->bindParam(1, $keywords);
+//     $stmt->bindParam(2, $keywords);
+//     $stmt->bindParam(3, $keywords);
+ 
+//     // execute query
+//     $stmt->execute();
+ 
+//     return $stmt;
+// }
+
+
 }
 ?>
