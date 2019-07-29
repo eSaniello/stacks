@@ -12,6 +12,57 @@
 
     <!-- http://stacks.serveo.net/stacks/backend/api/ -->
 
+    <h2>Basic use of this API</h2>
+    De stacks API biedt CRUD operaties voor
+    <h5>Routes</h5>
+    <ul>
+        <li>freelancers</li>
+        <li>klant</li>
+        <li>categorie</li>
+        <li>post</li>
+    </ul>
+    <p>
+        al deze routes bezitten de betreffende files voor de verschillende
+        operaties(create/read/read_one/update/delete)
+    </p>
+    <h5>De URL voor Requests ziet er uit als volgt:</h5>
+    <pre>
+        http://stacks.serveo.net/stacks/backend/api/[route]/[operatie].php
+    </pre>
+
+    <h3>Het creeren van niewe Freelancers</h3>
+
+    <p>
+        endpoint: http://stacks.serveo.net/stacks/backend/api/freelancers/create.php
+    </p>
+    <pre>
+        Headers:
+
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header("Access-Control-Allow-Methods: POST");
+        header("Access-Control-Max-Age: 3600");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization,
+        X-Requested-With");
+
+
+     {
+        "type_id": "1",
+        "gebruikersnaam": "jdoe",
+        "naam": "Doe",
+        "voornaam": "John",
+        "email": "jdoe@gmail.com",
+        "mobiel": "8563214",
+        "adres": "helpstraat 69",
+        "woonplaats": "Paramaribo",
+        "opleiding": "",
+        "werkervaring": "",
+        "wachtwoord":"wachtwoord"
+        
+    }
+    </pre>
+
+
 
 </body>
 

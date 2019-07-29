@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 29 jul 2019 om 18:46
+-- Gegenereerd op: 29 jul 2019 om 23:54
 -- Serverversie: 10.1.36-MariaDB
 -- PHP-versie: 7.2.11
 
@@ -61,16 +61,18 @@ CREATE TABLE `freelancers` (
   `adres` varchar(100) DEFAULT NULL,
   `woonplaats` varchar(100) DEFAULT NULL,
   `opleiding` tinytext,
-  `werkervaring` tinytext
+  `werkervaring` tinytext,
+  `wachtwoord` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `freelancers`
 --
 
-INSERT INTO `freelancers` (`freelancer_id`, `type_id`, `gebruikersnaam`, `naam`, `voornaam`, `email`, `mobiel`, `adres`, `woonplaats`, `opleiding`, `werkervaring`) VALUES
-(1, 1, 'm23ck', 'Mack', 'Andojo', 'andojomack@gmail.com', 8879541, 'Potweg 12', 'Marowijne', 'NATIN', 'Vortex Inc.'),
-(2, 1, 'mpawirodinomo', 'Pawirodino', 'Mitchel', 'mpawirodinomo@gmail.com', 7896542, 'skuutweg 69', 'Zorg en Hoop', 'UNASAT', 'Above Normal');
+INSERT INTO `freelancers` (`freelancer_id`, `type_id`, `gebruikersnaam`, `naam`, `voornaam`, `email`, `mobiel`, `adres`, `woonplaats`, `opleiding`, `werkervaring`, `wachtwoord`) VALUES
+(1, 1, 'm23ck', 'Mack', 'Andojo', 'andojomack@gmail.com', 8879541, 'Potweg 12', 'Marowijne', 'NATIN', 'Vortex Inc.', ''),
+(2, 1, 'mpawirodinomo', 'Pawirodino', 'Mitchel', 'mpawirodinomo@gmail.com', 7896542, 'skuutweg 69', 'Zorg en Hoop', 'UNASAT', 'Above Normal', ''),
+(7, 1, 'eSaniello', 'Samadhan', 'Shaniel', 'shanielsamadhan@gmail.com', 8855412, 'weedstraat 69', 'Paramaribo', 'NATIN', 'Belastingdienst, GPSSR', '$2y$10$JKRHWsA5zfXSRvIVt.wCJexlRM3gzfjFPHZRn8OQtn7Fzm7ZzEPcS');
 
 -- --------------------------------------------------------
 
@@ -101,16 +103,18 @@ CREATE TABLE `klant` (
   `email` varchar(30) DEFAULT NULL,
   `mobiel` int(20) DEFAULT NULL,
   `adres` varchar(100) DEFAULT NULL,
-  `woonplaats` varchar(100) DEFAULT NULL
+  `woonplaats` varchar(100) DEFAULT NULL,
+  `wachtwoord` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `klant`
 --
 
-INSERT INTO `klant` (`klant_id`, `type_id`, `gebruikersnaam`, `naam`, `voornaam`, `email`, `mobiel`, `adres`, `woonplaats`) VALUES
-(1, 2, 'mclvn', 'Mclovin', 'Henry', 'hmc@gmail.com', 8975462, 'quatroweg 56', 'Kwatta'),
-(2, 2, 'eSaniello', 'Samadhan', 'Shaniel', 'shaniel29samadhan@gmail.com', 8896542, 'wietweg 420', 'Leiding');
+INSERT INTO `klant` (`klant_id`, `type_id`, `gebruikersnaam`, `naam`, `voornaam`, `email`, `mobiel`, `adres`, `woonplaats`, `wachtwoord`) VALUES
+(1, 2, 'mclvn', 'Mclovin', 'Henry', 'hmc@gmail.com', 8975462, 'quatroweg 56', 'Kwatta', ''),
+(2, 2, 'eSaniello', 'Samadhan', 'Shaniel', 'shaniel29samadhan@gmail.com', 8896542, 'wietweg 420', 'Leiding', ''),
+(3, 1, 'eSaniello', 'Samadhan', 'Shaniel', 'shanielsamadhan@gmail.com', 8855412, 'weedstraat 69', 'Paramaribo', '$2y$10$sgKkTN3UPkUCh3HPI9prJe0vKxf..zVmvtRjGZfTuBhwcT43nrHtm');
 
 -- --------------------------------------------------------
 
@@ -236,7 +240,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT voor een tabel `freelancers`
 --
 ALTER TABLE `freelancers`
-  MODIFY `freelancer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `freelancer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT voor een tabel `jobs`
@@ -248,7 +252,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT voor een tabel `klant`
 --
 ALTER TABLE `klant`
-  MODIFY `klant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `klant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `post`

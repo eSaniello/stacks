@@ -55,7 +55,8 @@ class Klant
             email=:email,
             mobiel=:mobiel,
             adres=:adres,
-            woonplaats=:woonplaats";
+            woonplaats=:woonplaats,
+            wachtwoord=:wachtwoord";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -69,6 +70,7 @@ class Klant
         $this->mobiel = htmlspecialchars(strip_tags($this->mobiel));
         $this->adres = htmlspecialchars(strip_tags($this->adres));
         $this->woonplaats = htmlspecialchars(strip_tags($this->woonplaats));
+        $this->wachtwoord = htmlspecialchars(strip_tags(password_hash($this->wachtwoord, PASSWORD_DEFAULT)));
 
 
         // bind values
@@ -80,6 +82,7 @@ class Klant
         $stmt->bindParam(":mobiel", $this->mobiel);
         $stmt->bindParam(":adres", $this->adres);
         $stmt->bindParam(":woonplaats", $this->woonplaats);
+        $stmt->bindParam(":wachtwoord", $this->wachtwoord);
 
 
 

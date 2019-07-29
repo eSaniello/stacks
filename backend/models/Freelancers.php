@@ -57,7 +57,8 @@ class Freelancers
             adres=:adres,
             woonplaats=:woonplaats,
             opleiding=:opleiding,
-            werkervaring=:werkervaring";
+            werkervaring=:werkervaring,
+            wachtwoord=:wachtwoord";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -73,6 +74,8 @@ class Freelancers
         $this->woonplaats = htmlspecialchars(strip_tags($this->woonplaats));
         $this->opleiding = htmlspecialchars(strip_tags($this->opleiding));
         $this->werkervaring = htmlspecialchars(strip_tags($this->werkervaring));
+        $this->wachtwoord = htmlspecialchars(strip_tags(password_hash($this->wachtwoord, PASSWORD_DEFAULT)));
+
 
 
         // bind values
@@ -86,7 +89,7 @@ class Freelancers
         $stmt->bindParam(":woonplaats", $this->woonplaats);
         $stmt->bindParam(":opleiding", $this->opleiding);
         $stmt->bindParam(":werkervaring", $this->werkervaring);
-
+        $stmt->bindParam(":wachtwoord", $this->wachtwoord);
 
 
         // execute query

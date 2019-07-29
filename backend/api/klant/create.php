@@ -30,7 +30,8 @@ if (
     !empty($data->email) &&
     !empty($data->mobiel) &&
     !empty($data->adres) &&
-    !empty($data->woonplaats)
+    !empty($data->woonplaats)&&
+    !empty($data->wachtwoord)
 
 ) {
 
@@ -43,6 +44,8 @@ if (
     $klant->mobiel = $data->mobiel;
     $klant->adres = $data->adres;
     $klant->woonplaats = $data->woonplaats;
+    $klant->wachtwoord = $data->wachtwoord;
+
 
     // create the klant
     if ($klant->create()) {

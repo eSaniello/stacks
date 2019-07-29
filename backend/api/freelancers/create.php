@@ -30,9 +30,8 @@ if (
     !empty($data->email) &&
     !empty($data->mobiel) &&
     !empty($data->adres) &&
-    !empty($data->woonplaats) &&
-    !empty($data->opleiding) &&
-    !empty($data->werkervaring)
+    !empty($data->woonplaats)&&
+    !empty($data->wachtwoord)
 
 ) {
 
@@ -47,9 +46,13 @@ if (
     $freelancer->woonplaats = $data->woonplaats;
     $freelancer->opleiding = $data->opleiding;
     $freelancer->werkervaring = $data->werkervaring;
+    $freelancer->wachtwoord = $data->wachtwoord;
+
+
 
     // create the freelancer
     if ($freelancer->create()) {
+
 
         // set response code - 201 created
         http_response_code(201);
