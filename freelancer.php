@@ -35,8 +35,8 @@
 <br><br>
             <?php 
             include "../stacks-backend/backend/rest-api/config/Database.php"; 
-                $var = "Database->conn";
-                $freelsql = mysqli_query($var, "SELECT * FROM freelancers ORDER BY freelancer_id ASC");
+            
+                $freelsql = mysqli_query($conn, "SELECT * FROM freelancers ORDER BY freelancer_id ASC");
                 while($row = mysqli_fetch_array($freelsql)){
                                 echo "<tr>";
                                 echo "<td>". $row['freelancer_id'] ."</td>";
@@ -49,5 +49,5 @@
                                 echo "</tr>";
                 }                
             ?>
-</body> 
+</body>
 </html>
