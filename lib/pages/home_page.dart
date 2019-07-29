@@ -26,7 +26,8 @@ class HomePage extends StatelessWidget {
                   height: 50,
                   child: CircleAvatar(
                     backgroundImage: NetworkImage(
-                        "https://www.citrix.com/blogs/wp-content/uploads/2017/11/Citrix-Blog-User-Bio-Photo-6.png"),
+                      "https://www.citrix.com/blogs/wp-content/uploads/2017/11/Citrix-Blog-User-Bio-Photo-6.png",
+                    ),
                   ),
                 ),
                 subtitle: Text("Balans: SRD 280.00"),
