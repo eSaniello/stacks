@@ -165,132 +165,95 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    // Widget projecten = ListView(
-    //   shrinkWrap: true,
-    //   padding: const EdgeInsets.all(8),
-    //   children: <Widget>[
-    //     SizedBox(
-    //       height: 210,
-    //       child: Card(
-    //         child: Column(
-    //           children: <Widget>[
-    //             ListTile(
-    //               title: Text(
-    //                 'Stacks',
-    //                 style: TextStyle(fontWeight: FontWeight.w500),
-    //               ),
-    //               subtitle: Text('Lorem ipsum gorrea...'),
-    //             ),
-    //           ],
-    //         ),
-    //       ),
-    //     ),
-    //     Divider(),
-    //     SizedBox(
-    //       height: 210,
-    //       child: Card(
-    //         child: Column(
-    //           children: <Widget>[
-    //             ListTile(
-    //               title: Text(
-    //                 'RS-Autowerkplaats',
-    //                 style: TextStyle(fontWeight: FontWeight.w500),
-    //               ),
-    //               subtitle: Text('Web-app made with PHP.'),
-    //             ),
-    //           ],
-    //         ),
-    //       ),
-    //     ),
-    //   ],
-    // );
-
-    Widget projecten = ListView(
-      shrinkWrap: true,
-      children: <Widget>[
-        new Card(
-          child: Column(
-            children: <Widget>[
-              const ListTile(
-                title: const Text('Stacks'),
-                subtitle: const Text('Freelacer mobile app voor Suriname.'),
-              ),
-            ],
+    Widget project = Container(
+      child: Column(
+        children: <Widget>[
+          new Card(
+            child: Column(
+              children: <Widget>[
+                const ListTile(
+                  title: const Text('Stacks'),
+                  subtitle: const Text('Freelacer mobile app voor Suriname.'),
+                ),
+              ],
+            ),
           ),
-        ),
-        new Card(
-          child: Column(
-            children: <Widget>[
-              const ListTile(
-                title: const Text('RS-Autowerkplaats'),
-                subtitle: const Text('A web app made with PHP.'),
-              ),
-            ],
+          new Card(
+            child: Column(
+              children: <Widget>[
+                const ListTile(
+                  title: const Text('RS-Autowerkplaats'),
+                  subtitle: const Text('A web app made with PHP.'),
+                ),
+              ],
+            ),
           ),
-        ),
-        new Card(
-          child: Column(
-            children: <Widget>[
-              const ListTile(
-                title: const Text('Productivv'),
-                subtitle: const Text('A web app made with PHP.'),
-              ),
-            ],
+          new Card(
+            child: Column(
+              children: <Widget>[
+                const ListTile(
+                  title: const Text('Productivv'),
+                  subtitle: const Text('A web app made with PHP.'),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
 
-    Widget werkervaring = ListView(
-      shrinkWrap: true,
-      children: <Widget>[
-        new Card(
-          child: Column(
-            children: <Widget>[
-              const ListTile(
-                title: const Text('Google Inc.'),
-                subtitle: const Text('2010-2013'),
-              ),
-            ],
+    Widget werkervaring = Container(
+      child: Column(
+        children: <Widget>[
+          new Card(
+            child: Column(
+              children: <Widget>[
+                const ListTile(
+                  title: const Text('Google Inc.'),
+                  subtitle: const Text('2010-2013'),
+                ),
+              ],
+            ),
           ),
-        ),
-        new Card(
-          child: Column(
-            children: <Widget>[
-              const ListTile(
-                title: const Text('Microsoft'),
-                subtitle: const Text('2015-2017'),
-              ),
-            ],
+          new Card(
+            child: Column(
+              children: <Widget>[
+                const ListTile(
+                  title: const Text('Microsoft'),
+                  subtitle: const Text('2015-2017'),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
 
-    Widget opleiding = ListView(
-      shrinkWrap: true,
-      children: <Widget>[
-        new Card(
-          child: Column(
-            children: <Widget>[
-              const ListTile(
-                title: const Text('Mulo Meerzorg'),
-                subtitle: const Text('2012-2016'),
-              ),
-            ],
+    Widget opleiding = Container(
+      child: Column(
+        children: <Widget>[
+          new Card(
+            child: Column(
+              children: <Widget>[
+                const ListTile(
+                  title: const Text('Mulo Meerzorg'),
+                  subtitle: const Text('2012-2016'),
+                ),
+              ],
+            ),
           ),
-        ),
-        new Card(
-          child: Column(
-            children: <Widget>[
-              const ListTile(
-                title: const Text('Natin'),
-                subtitle: const Text('2016-...'),
-              ),
-            ],
+          new Card(
+            child: Column(
+              children: <Widget>[
+                const ListTile(
+                  title: const Text('Natin'),
+                  subtitle: const Text('2016-...'),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
 
     return MaterialApp(
@@ -300,7 +263,7 @@ class MyApp extends StatelessWidget {
           children: <Widget>[
             profileHeader,
             headerProjecten,
-            projecten,
+            project,
             headerWerkervaring,
             werkervaring,
             headerOpleiding,
