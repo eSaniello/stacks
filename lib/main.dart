@@ -131,6 +131,40 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    Widget headerWerkervaring = Container(
+      padding: const EdgeInsets.only(left: 8, bottom: 8),
+      height: 50,
+      child: Row(
+        children: <Widget>[
+          Text(
+            'Werkervaring',
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.grey[400],
+            ),
+          ),
+          Divider(),
+        ],
+      ),
+    );
+
+    Widget headerOpleiding = Container(
+      padding: const EdgeInsets.only(left: 8, bottom: 8),
+      height: 50,
+      child: Row(
+        children: <Widget>[
+          Text(
+            'Opleidingen',
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.grey[400],
+            ),
+          ),
+          Divider(),
+        ],
+      ),
+    );
+
     // Widget projecten = ListView(
     //   shrinkWrap: true,
     //   padding: const EdgeInsets.all(8),
@@ -184,7 +218,6 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        Divider(),
         new Card(
           child: Column(
             children: <Widget>[
@@ -195,7 +228,6 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        Divider(),
         new Card(
           child: Column(
             children: <Widget>[
@@ -206,46 +238,54 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        Divider(),
+      ],
+    );
+
+    Widget werkervaring = ListView(
+      shrinkWrap: true,
+      children: <Widget>[
         new Card(
           child: Column(
             children: <Widget>[
               const ListTile(
-                title: const Text('Productivv'),
-                subtitle: const Text('A web app made with PHP.'),
+                title: const Text('Google Inc.'),
+                subtitle: const Text('2010-2013'),
               ),
             ],
           ),
         ),
-        Divider(),
         new Card(
           child: Column(
             children: <Widget>[
               const ListTile(
-                title: const Text('Productivv'),
-                subtitle: const Text('A web app made with PHP.'),
+                title: const Text('Microsoft'),
+                subtitle: const Text('2015-2017'),
               ),
             ],
           ),
         ),
-        Divider(),
+      ],
+    );
+
+    Widget opleiding = ListView(
+      shrinkWrap: true,
+      children: <Widget>[
         new Card(
           child: Column(
             children: <Widget>[
               const ListTile(
-                title: const Text('Productivv'),
-                subtitle: const Text('A web app made with PHP.'),
+                title: const Text('Mulo Meerzorg'),
+                subtitle: const Text('2012-2016'),
               ),
             ],
           ),
         ),
-        Divider(),
         new Card(
           child: Column(
             children: <Widget>[
               const ListTile(
-                title: const Text('Productivv'),
-                subtitle: const Text('A web app made with PHP.'),
+                title: const Text('Natin'),
+                subtitle: const Text('2016-...'),
               ),
             ],
           ),
@@ -261,6 +301,10 @@ class MyApp extends StatelessWidget {
             profileHeader,
             headerProjecten,
             projecten,
+            headerWerkervaring,
+            werkervaring,
+            headerOpleiding,
+            opleiding,
           ],
         ),
       ),
