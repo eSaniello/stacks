@@ -14,7 +14,6 @@
 
 <body class= white>
   <div class = "header">
-    
   <img src="../media/logo.png" height="200px" width="200px">
   Stacks
   </div>
@@ -24,8 +23,8 @@
             <div class="col s10">
                 <ul class="tabs"> 
                 <div class="nav-wrapper">
-                    <li class="tab col s6"><a class="waves-effect active" href="index.php"><i class="material-icons">people</i> Aanvraag</a></li>
-                    <li class="tab col s6"><a class="waves-effect" href="freelancer.php"><i class="material-icons">directions_car</i> Freelancer</a></li>
+                    <li class="tab col s6"><a class="waves-effect" href="index.php"><i class="material-icons">person_add</i> Aanvraag</a></li>
+                    <li class="tab col s6"><a class="waves-effect active" href="freelancer.php"><i class="material-icons">people</i> Freelancer</a></li>
                   </ul>
               </div>
     </div>
@@ -33,21 +32,43 @@
 </div>
 </nav>
 <br><br>
+<div style="height: 40em; overflow:auto;">
+        <table class="highlight">
+            <thead>
+        <tr>
+        <th>Freelancer ID</th>
+        <th>Type</th>
+        <th>Naam</th>
+        <th>Voornaam</th>
+        <th></th>
+        </tr>
+</thead>
+         <tbody> 
             <?php 
-            include "../stacks-backend/backend/rest-api/config/Database.php"; 
-            
-                $freelsql = mysqli_query($conn, "SELECT * FROM freelancers ORDER BY freelancer_id ASC");
+            include "../stacks-backend/backend/config/data.php"; 
+            //$var = "Database->conn";
+                $freelsql = mysqli_query($conn, "SELECT * FROM freelancers WHERE status = 'approved'");
+                $typesql = mysqli_query($conn, "SELECT * FROM type_user ORDER BY type_id ASC");
+                while($type = mysqli_fetch_array($typesql)){
                 while($row = mysqli_fetch_array($freelsql)){
                                 echo "<tr>";
                                 echo "<td>". $row['freelancer_id'] ."</td>";
+                                echo "<td>". $type['naam'] ."</td>";
                                 echo "<td>". $row['naam'] ."</td>";
+                                echo "<td>". $row['voornaam'] ."</td>";
                                 echo "<td>";
-                                echo "<a href='printvt.php?id=". $row['freelancer_id'] ."' title='Contract' data-toggle='tooltip'><i class='small1 material-icons'>group_add</i></a>";
-                                echo "<a href='deletevoert.php?id=". $row['freelancer_id'] ."' title='Verwijderen' data-toggle='tooltip'><i class='small1 material-icons'>cancel</i></a>";
-                                echo "<a href='updatevoert.php?id=". $row['freelancer_id'] ."' title='Update' data-toggle='tooltip'><i class='small1 material-icons'>remove_red_eye</i></a>";
+                                echo "<a href='delete.php?id=". $row['freelancer_id'] ."' title='Verwijderen' data-toggle='tooltip'><i class='small1 material-icons'>delete</i></a>";
                                 echo "</td>";
                                 echo "</tr>";
-                }                
+                }         
+            }       
             ?>
+            </tbody>
+            </table>
+            </div>
+
+<script type="text/javascript">
+       M.AutoInit();
+      </script>
 </body>
 </html>
