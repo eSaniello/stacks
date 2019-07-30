@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "STACKS",
+          "Dashboard",
           style: TextStyle(fontFamily: "AllertaStencil"),
         ),
         centerTitle: true,
@@ -43,6 +43,37 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(
               title: Text('Dashboard'),
+              leading: Icon(Icons.dashboard),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Notificaties'),
+              leading: Icon(Icons.notifications_active),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Instellingen'),
+              leading: Icon(Icons.settings),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Uitloggen'),
+              leading: Icon(Icons.exit_to_app),
               onTap: () {
                 // Update the state of the app.
                 // ...
