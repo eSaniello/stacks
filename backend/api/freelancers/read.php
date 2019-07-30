@@ -28,7 +28,6 @@ $num = $result->rowCount();
 if ($num > 0) {
     // freelancer array
     $freelancers_arr = array();
-    $freelancers_arr['data'] = array();
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
@@ -52,7 +51,7 @@ if ($num > 0) {
 
         );
         // Push to "data
-        array_push($freelancers_arr['data'], $freelancer_item);
+        array_push($freelancers_arr, $freelancer_item);
     }
     // turn to JSON & output
     echo json_encode($freelancers_arr);

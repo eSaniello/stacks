@@ -28,7 +28,6 @@ $num = $result->rowCount();
 if ($num > 0) {
     // klant array
     $klant_arr = array();
-    $klant_arr['data'] = array();
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
@@ -47,7 +46,7 @@ if ($num > 0) {
 
         );
         // Push to "data
-        array_push($klant_arr['data'], $klant_item);
+        array_push($klant_arr, $klant_item);
     }
     // turn to JSON & output
     echo json_encode($klant_arr);
