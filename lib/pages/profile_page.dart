@@ -25,9 +25,7 @@ class ProfilePage extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         CircleAvatar(
-                          backgroundImage: NetworkImage(
-                            "https://www.citrix.com/blogs/wp-content/uploads/2017/11/Citrix-Blog-User-Bio-Photo-6.png",
-                          ),
+                          backgroundImage: AssetImage('assets/profile_pic.png'),
                           radius: 50,
                         ),
                       ],
