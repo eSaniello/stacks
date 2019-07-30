@@ -35,6 +35,8 @@ $freelancer->adres = $data->adres;
 $freelancer->woonplaats = $data->woonplaats;
 $freelancer->opleiding = $data->opleiding;
 $freelancer->werkervaring = $data->werkervaring;
+$freelancer->wachtwoord = $data->wachtwoord;
+$freelancer->status = $data->status;
 
 // update the freelancer
 if ($freelancer->update()) {

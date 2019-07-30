@@ -42,7 +42,8 @@ if ($num > 0) {
             'email' => $email,
             'mobiel' => $mobiel,
             'adres' => $adres,
-            'woonplaats' => $woonplaats
+            'woonplaats' => $woonplaats,
+            'wachtwoord' => $wachtwoord
 
         );
         // Push to "data

@@ -18,6 +18,8 @@ class Freelancers
     public $woonplaats;
     public $opleiding;
     public $werkervaring;
+    public $wachtwoord;
+    public $status;
 
 
     public function __construct($db)
@@ -29,7 +31,7 @@ class Freelancers
     {
         //create query
         $query = "SELECT
-                freelancer_id, type_id, gebruikersnaam, naam, voornaam, email, mobiel, adres, woonplaats, opleiding, werkervaring 
+                freelancer_id, type_id, gebruikersnaam, naam, voornaam, email, mobiel, adres, woonplaats, opleiding, werkervaring, wachtwoord, status 
             FROM
                 " . $this->table_naam . "
             ORDER BY
@@ -58,7 +60,8 @@ class Freelancers
             woonplaats=:woonplaats,
             opleiding=:opleiding,
             werkervaring=:werkervaring,
-            wachtwoord=:wachtwoord";
+            wachtwoord=:wachtwoord,
+            status=:status";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -75,6 +78,8 @@ class Freelancers
         $this->opleiding = htmlspecialchars(strip_tags($this->opleiding));
         $this->werkervaring = htmlspecialchars(strip_tags($this->werkervaring));
         $this->wachtwoord = htmlspecialchars(strip_tags(password_hash($this->wachtwoord, PASSWORD_DEFAULT)));
+        $this->status = htmlspecialchars(strip_tags($this->status));
+
 
 
 
@@ -90,6 +95,8 @@ class Freelancers
         $stmt->bindParam(":opleiding", $this->opleiding);
         $stmt->bindParam(":werkervaring", $this->werkervaring);
         $stmt->bindParam(":wachtwoord", $this->wachtwoord);
+        $stmt->bindParam(":status", $this->status);
+
 
 
         // execute query
@@ -105,7 +112,7 @@ class Freelancers
         // query to read single record
 
         $query = "SELECT
-                freelancer_id, type_id, gebruikersnaam, naam, voornaam, email, mobiel, adres, woonplaats, opleiding, werkervaring 
+                freelancer_id, type_id, gebruikersnaam, naam, voornaam, email, mobiel, adres, woonplaats, opleiding, werkervaring, wachtwoord, status 
             FROM
                 " . $this->table_naam . "
             WHERE
@@ -132,6 +139,10 @@ class Freelancers
         $this->woonplaats = $row['woonplaats'];
         $this->opleiding = $row['opleiding'];
         $this->werkervaring = $row['werkervaring'];
+        $this->wachtwoord = $row['wachtwoord'];
+        $this->status = $row['status'];
+
+
     }
     // update the freelancer
     function update()
@@ -149,7 +160,10 @@ class Freelancers
                 adres = :adres,
                 woonplaats = :woonplaats,
                 opleiding = :opleiding,
-                werkervaring = :werkervaring
+                werkervaring = :werkervaring,
+                wachtwoord=:wachtwoord,
+                status=:status
+
                 
                 
             WHERE
@@ -170,6 +184,8 @@ class Freelancers
         $this->woonplaats = htmlspecialchars(strip_tags($this->woonplaats));
         $this->opleiding = htmlspecialchars(strip_tags($this->opleiding));
         $this->werkervaring = htmlspecialchars(strip_tags($this->werkervaring));
+        $this->wachtwoord = htmlspecialchars(strip_tags(password_hash($this->wachtwoord, PASSWORD_DEFAULT)));
+        $this->status = htmlspecialchars(strip_tags($this->status));
 
         // bind new values
         $stmt->bindParam(':freelancer_id', $this->freelancer_id);
@@ -183,6 +199,8 @@ class Freelancers
         $stmt->bindParam(':woonplaats', $this->woonplaats);
         $stmt->bindParam(':opleiding', $this->opleiding);
         $stmt->bindParam(':werkervaring', $this->werkervaring);
+        $stmt->bindParam(":wachtwoord", $this->wachtwoord);
+        $stmt->bindParam(":status", $this->status);
 
         // execute the query
         if ($stmt->execute()) {

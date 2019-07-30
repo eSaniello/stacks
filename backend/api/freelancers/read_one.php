@@ -37,7 +37,11 @@ if ($freelancer->naam != null) {
         "adres" => $freelancer->adres,
         "woonplaats" => $freelancer->woonplaats,
         "opleiding" => $freelancer->opleiding,
-        "werkervaring" => $freelancer->werkervaring
+        "werkervaring" => $freelancer->werkervaring,
+        "wachtwoord" => $freelancer->wachtwoord,
+        "status" => $freelancer->status
+
+
     );
 
     // set response code - 200 OK

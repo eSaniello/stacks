@@ -16,6 +16,7 @@ class Klant
     public $mobiel;
     public $adres;
     public $woonplaats;
+    public $wachtwoord;
 
 
     public function __construct($db)
@@ -28,7 +29,7 @@ class Klant
     {
         //create query
         $query = "SELECT
-                klant_id, type_id, gebruikersnaam, naam, voornaam, email, mobiel, adres, woonplaats 
+                klant_id, type_id, gebruikersnaam, naam, voornaam, email, mobiel, adres, woonplaats, wachtwoord 
             FROM
                 " . $this->table_naam . "
             ORDER BY
@@ -100,7 +101,7 @@ class Klant
         // query to read single record
 
         $query = "SELECT
-                klant_id, type_id, gebruikersnaam, naam, voornaam, email, mobiel, adres, woonplaats 
+                klant_id, type_id, gebruikersnaam, naam, voornaam, email, mobiel, adres, woonplaats, wachtwoord 
             FROM
                 " . $this->table_naam . "
             WHERE
@@ -125,6 +126,8 @@ class Klant
         $this->mobiel = $row['mobiel'];
         $this->adres = $row['adres'];
         $this->woonplaats = $row['woonplaats'];
+        $this->wachtwoord = $row['wachtwoord'];
+
     }
     // update the klant
     function update()

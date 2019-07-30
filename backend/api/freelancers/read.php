@@ -44,7 +44,11 @@ if ($num > 0) {
             'adres' => $adres,
             'woonplaats' => $woonplaats,
             'opleiding' => $opleiding,
-            'werkervaring' => $werkervaring
+            'werkervaring' => $werkervaring,
+            'wachtwoord' => $wachtwoord,
+            'status' => $status
+
+
 
         );
         // Push to "data

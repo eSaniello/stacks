@@ -31,7 +31,8 @@ if (
     !empty($data->mobiel) &&
     !empty($data->adres) &&
     !empty($data->woonplaats)&&
-    !empty($data->wachtwoord)
+    !empty($data->wachtwoord)&&
+    !empty($data->status)
 
 ) {
 
@@ -47,6 +48,8 @@ if (
     $freelancer->opleiding = $data->opleiding;
     $freelancer->werkervaring = $data->werkervaring;
     $freelancer->wachtwoord = $data->wachtwoord;
+    $freelancer->status = $data->status;
+
 
 
 
